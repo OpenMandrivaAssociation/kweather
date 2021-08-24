@@ -1,14 +1,14 @@
-#define snapshot 20200825
-#define commit bdeb34190dc11f855bafb300e5879f04ff7432d5
+%define snapshot 20210825
+%define commit dccfaa0fea063c5a79b1f8d41261e5532e5387dc
 
 Name:		kweather
-Version:	0.4
+Version:	21.08
 %if 0%{?snapshot}
 Release:	0.%{snapshot}.1
 Source0:	https://invent.kde.org/plasma-mobile/kweather/-/archive/master/kweather-%{snapshot}.tar.bz2
 %else
 Release:	1
-Source0:	https://invent.kde.org/plasma-mobile/kweather/-/archive/%{version}/kweather-%{version}.tar.bz2
+Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary:	Weather applet for Plasma Mobile
 License:	GPLv3
@@ -30,6 +30,7 @@ BuildRequires:	cmake(KF5Notifications)
 BuildRequires:	cmake(KF5DBusAddons)
 BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(KF5QuickCharts)
+BuildRequires:	cmake(KF5KWeatherCore)
 BuildRequires:	cmake(OpenSSL)
 BuildRequires:	pkgconfig(openssl)
 
@@ -56,3 +57,6 @@ Weather applet for Plasma Mobile
 %{_datadir}/dbus-1/services/org.kde.kweather.service
 %{_datadir}/icons/*/scalable/apps/kweather.svg
 %{_datadir}/metainfo/org.kde.kweather.appdata.xml
+%{_libdir}/qt5/plugins/plasma/applets/plasma_applet_kweather_1x4.so
+%{_datadir}/metainfo/org.kde.plasma.kweather_1x4.appdata.xml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.kweather_1x4
