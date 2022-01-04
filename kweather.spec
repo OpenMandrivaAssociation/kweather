@@ -35,7 +35,7 @@ BuildRequires:	cmake(OpenSSL)
 BuildRequires:	pkgconfig(openssl)
 
 %description
-Weather applet for Plasma Mobile
+Weather applet for Plasma Mobile (ROSA)
 
 %prep
 %if 0%{?snapshot}
