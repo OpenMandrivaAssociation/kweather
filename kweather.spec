@@ -1,8 +1,8 @@
-%define snapshot 20210825
-%define commit dccfaa0fea063c5a79b1f8d41261e5532e5387dc
+#define snapshot 20210825
+#define commit dccfaa0fea063c5a79b1f8d41261e5532e5387dc
 
 Name:		kweather
-Version:	21.08
+Version:	21.12
 %if 0%{?snapshot}
 Release:	0.%{snapshot}.1
 Source0:	https://invent.kde.org/plasma-mobile/kweather/-/archive/master/kweather-%{snapshot}.tar.bz2
@@ -50,8 +50,9 @@ Weather applet for Plasma Mobile
 
 %install
 %ninja_install -C build
+%find_lang %{name}
 
-%files
+%files -f %{name}.lang
 %{_bindir}/kweather
 %{_datadir}/applications/org.kde.kweather.desktop
 %{_datadir}/dbus-1/services/org.kde.kweather.service
@@ -60,3 +61,4 @@ Weather applet for Plasma Mobile
 %{_libdir}/qt5/plugins/plasma/applets/plasma_applet_kweather_1x4.so
 %{_datadir}/metainfo/org.kde.plasma.kweather_1x4.appdata.xml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.kweather_1x4
+%{_datadir}/kservices5/plasma-applet-org.kde.plasma.kweather_1x4.desktop
