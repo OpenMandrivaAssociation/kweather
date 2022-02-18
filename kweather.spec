@@ -2,9 +2,9 @@
 #define commit dccfaa0fea063c5a79b1f8d41261e5532e5387dc
 
 Name:		kweather
-Version:	21.12
+Version:	22.02
 %if 0%{?snapshot}
-Release:	0.%{snapshot}.1
+Release:	1.%{snapshot}.1
 Source0:	https://invent.kde.org/plasma-mobile/kweather/-/archive/master/kweather-%{snapshot}.tar.bz2
 %else
 Release:	1
