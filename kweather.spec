@@ -4,10 +4,10 @@
 Name:		kweather
 Version:	22.06
 %if 0%{?snapshot}
-Release:	1.%{snapshot}.1
+Release:	0.%{snapshot}.1
 Source0:	https://invent.kde.org/plasma-mobile/kweather/-/archive/master/kweather-%{snapshot}.tar.bz2
 %else
-Release:	1
+Release:	2
 Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary:	Weather applet for Plasma Mobile
