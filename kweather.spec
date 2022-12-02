@@ -2,9 +2,9 @@
 #define commit dccfaa0fea063c5a79b1f8d41261e5532e5387dc
 
 Name:		kweather
-Version:	22.09
+Version:	22.11
 %if 0%{?snapshot}
-Release:	1.%{snapshot}.1
+Release:	1.%{snapshot}1
 Source0:	https://invent.kde.org/plasma-mobile/kweather/-/archive/master/kweather-%{snapshot}.tar.bz2
 %else
 Release:	1
@@ -57,7 +57,7 @@ Weather applet for Plasma Mobile
 %{_bindir}/kweather
 %{_datadir}/applications/org.kde.kweather.desktop
 %{_datadir}/dbus-1/services/org.kde.kweather.service
-%{_datadir}/icons/*/scalable/apps/kweather.svg
+%{_datadir}/icons/*/scalable/apps/org.kde.kweather.svg
 %{_datadir}/metainfo/org.kde.kweather.appdata.xml
 %{_libdir}/qt5/plugins/plasma/applets/plasma_applet_kweather_1x4.so
 %{_datadir}/metainfo/org.kde.plasma.kweather_1x4.appdata.xml
