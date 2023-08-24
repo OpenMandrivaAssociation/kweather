@@ -1,14 +1,14 @@
-#define snapshot 20210825
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+#define git 20210825
 #define commit dccfaa0fea063c5a79b1f8d41261e5532e5387dc
 
 Name:		kweather
-Version:	22.11
-%if 0%{?snapshot}
-Release:	1.%{snapshot}1
-Source0:	https://invent.kde.org/plasma-mobile/kweather/-/archive/master/kweather-%{snapshot}.tar.bz2
+Version:	23.08.0
+Release:	%{?git:0.%{git}.}1
+%if 0%{?git:1}
+Source0:        https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
 %else
-Release:	2
-Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
+Source0:        https://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 %endif
 Summary:	Weather applet for Plasma Mobile
 License:	GPLv3
@@ -39,7 +39,7 @@ BuildRequires:	pkgconfig(openssl)
 Weather applet for Plasma Mobile
 
 %prep
-%if 0%{?snapshot}
+%if 0%{?git}
 %autosetup -p1 -n %{name}-master-%{commit}
 %else
 %autosetup -p1
@@ -62,4 +62,3 @@ Weather applet for Plasma Mobile
 %{_libdir}/qt5/plugins/plasma/applets/plasma_applet_kweather_1x4.so
 %{_datadir}/metainfo/org.kde.plasma.kweather_1x4.appdata.xml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.kweather_1x4
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.kweather_1x4.desktop
