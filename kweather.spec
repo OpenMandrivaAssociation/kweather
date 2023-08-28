@@ -32,6 +32,7 @@ BuildRequires:	cmake(KF5DBusAddons)
 BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(KF5QuickCharts)
 BuildRequires:	cmake(KF5KWeatherCore)
+BuildRequires:	cmake(KF5KirigamiAddons)
 BuildRequires:	cmake(OpenSSL)
 BuildRequires:	pkgconfig(openssl)
 
