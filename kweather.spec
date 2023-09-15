@@ -3,7 +3,7 @@
 #define commit dccfaa0fea063c5a79b1f8d41261e5532e5387dc
 
 Name:		kweather
-Version:	23.08.0
+Version:	23.08.1
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:        https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
