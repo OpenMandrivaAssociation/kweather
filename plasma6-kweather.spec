@@ -33,6 +33,7 @@ BuildRequires:	cmake(KF6QuickCharts)
 BuildRequires:	cmake(KF6KirigamiAddons)
 BuildRequires:	cmake(KWeatherCore)
 BuildRequires:	cmake(OpenSSL)
+BuildRequires:	cmake(Plasma) > 5.90.0
 BuildRequires:	pkgconfig(openssl)
 
 %description
