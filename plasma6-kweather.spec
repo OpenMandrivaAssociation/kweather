@@ -35,6 +35,7 @@ BuildRequires:	cmake(KWeatherCore)
 BuildRequires:	cmake(OpenSSL)
 BuildRequires:	cmake(Plasma) > 5.90.0
 BuildRequires:	pkgconfig(openssl)
+BuildRequires:	%mklibname -d Plasma
 
 %description
 Weather applet for Plasma Mobile
