@@ -1,12 +1,13 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-#define git 20210826
-#define commit dccfaa0fea063c6a79b1f8d41261e6632e6387dc
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		kweather
-Version:	24.01.95
+Version:	24.01.96
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
-Source0:        https://invent.kde.org/plasma-mobile/kweather/-/archive/master/kweather-master.tar.bz2
+Source0:        https://invent.kde.org/plasma-mobile/kweather/-/archive/%{gitbranch}/kweather-%{gitbranchd}.tar.bz2
 %else
 Source0:        https://download.kde.org/%{stable}/release-service/%{version}/src/kweather-%{version}.tar.xz
 %endif
@@ -41,11 +42,7 @@ BuildRequires:	%mklibname -d Plasma
 Weather applet for Plasma Mobile
 
 %prep
-%if 0%{?git}
-%autosetup -p1 -n kweather-master-%{commit}
-%else
-%autosetup -p1
-%endif
+%autosetup -p1 -n kweather-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
