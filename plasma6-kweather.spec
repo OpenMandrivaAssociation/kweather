@@ -4,7 +4,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		kweather
-Version:	24.02.1
+Version:	24.02.2
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:        https://invent.kde.org/plasma-mobile/kweather/-/archive/%{gitbranch}/kweather-%{gitbranchd}.tar.bz2
