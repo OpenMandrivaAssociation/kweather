@@ -32,6 +32,7 @@ BuildRequires:	cmake(KF6Notifications)
 BuildRequires:	cmake(KF6DBusAddons)
 BuildRequires:	cmake(KF6QuickCharts)
 BuildRequires:	cmake(KF6KirigamiAddons)
+BuildRequires:	cmake(KF6Crash)
 BuildRequires:	cmake(KWeatherCore)
 BuildRequires:	cmake(OpenSSL)
 BuildRequires:	cmake(Plasma) > 5.90.0
