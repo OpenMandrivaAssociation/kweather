@@ -4,7 +4,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		kweather
-Version:	26.04.3
+Version:	26.08.0
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:        https://invent.kde.org/plasma-mobile/kweather/-/archive/%{gitbranch}/kweather-%{gitbranchd}.tar.bz2
@@ -54,3 +54,4 @@ Weather applet for Plasma Mobile
 %{_datadir}/icons/*/scalable/apps/org.kde.kweather.svg
 %{_datadir}/metainfo/org.kde.kweather.appdata.xml
 %{_qtdir}/plugins/plasma/applets/org.kde.plasma.kweather_1x4.so
+%{_qtdir}/plugins/kf6/krunner/krunnerkweather.so
